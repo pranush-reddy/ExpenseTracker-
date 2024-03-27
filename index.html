@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        nav{
+            display: flex;
+            gap: 560px;
+            top: 0;
+            margin-bottom: 35px;
+            background-image: linear-gradient(to bottom right,rgb(54, 5, 54),rgb(96, 14, 96));
+            color: white;
+            height: 55px;
+            padding-top: 20px;
+            padding-left: 20px;
+            font-family: sans-serif;
+            box-shadow: 0px 0px 10px black;
+        }
+        h4{
+            font-size: 23px;
+            margin-top: 5px;
+        
+        }
+        h1{
+            margin-top: -7px;
+            font-size: 40px;
+        }
+        /*linear-gradient(to bottom right,rgb(41, 55, 83),rgb(8, 45, 101))
+        rgb(70, 38, 145),rgb(23, 8, 80));*/
+    body{
+        color: black;
+        background-image: white ;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        }
+        input[type="checkbox"]{
+            width: 23px;
+            height: 23px;
+        }
+    table{
+        width: 70vw;
+        margin-left: 150px;
+        margin-bottom: 100px;
+        border: 2px solid white;
+        background-color: black;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0px 0px 15px black;
+    }
+    td,th{
+        padding-top: 8px;
+        text-align: center;
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    tr{
+      background-color: rgb(255, 255, 255);
+      color: black;  
+      display: flex;
+      gap: 1px;
+      height: 45px;
+      width: inherit;
+      border-bottom:1.3px solid black;
+    }
+   /* tr:nth-child(even){
+        color: rgb(8, 8, 8);
+        background-color: rgb(228, 226, 226);
+    }*/
+    .cate , .spnt{
+        font-size: 23px;
+        margin-left: 170px;
+        border: 0px;
+    }
+    select{
+        width: 180px;
+        height: 38px;
+        font-size: 18px;
+        padding: 4px;
+        border-radius: 5px;
+        border: 2px solid black;
+    }
+    select:hover,select:active,#sp:hover,#sp:active{
+        box-shadow: 0px 0px 10px black;
+    }
+    input{
+        width: 180px;
+        height: 28px;
+        font-size: 17px;
+        padding: 4px;
+        border-radius: 5px;
+    }
+    
+     option{
+        font-size: 17px;
+    }
+    #main{
+        display: flex;
+        margin-left: 30px;
+    }
+    select{
+        transition: 0.4s ease all;
+    }
+    #add{
+        width: 200px;
+        height: 45px;
+        font-size: 1.2rem;
+        border: 2px solid black;
+        border-radius: 7px;
+        color: white;
+        background-image: linear-gradient(to bottom right,rgb(104, 143, 198),rgb(14, 51, 104));
+    }th{
+        background-color:rgb(96, 14, 96);
+        color: white;
+        font-size: 22px;
+    }
+    tr:hover{
+        background-color: aliceblue;
+    }
+    #add:hover{
+        background-color:rgb(15, 70, 147);
+        color:white;
+        font-size: 19.8px;
+        transition: 0.16s ease all;
+    }
+    td{
+        width: inherit;
+    }
+
+    #sp{
+        border-color: transparent;
+        border: 2px solid black;
+        padding-left: 10px;
+    
+    }
+    
+    .btns{
+        margin-top: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 300px;
+
+    }
+    .de{
+        display: flex;
+        position: relative;
+        top:-82px;
+        left: 650px;
+        width: 0px;
+    }
+    </style>
+</head>
+<body><header><nav>
+    <h1>Expense Tracker</h1>
+    <h4 id="res">You've Spent : Rs 0 /-</h4></nav>
+</header>
+    <form onsubmit="val(event)"><div id="main"><div class="cate">
+        <label for="category">Category :
+  <select id="cat" name="categroy">
+    <option value="Food">Food</option>
+    <option value="Transport">Transport</option>
+    <option value="Party">Party</option>
+    <option value="Groceries">Groceries</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Bills">Bills</option>
+    <option value="Health care">Health care</option>
+    <option value="Tax">Tax</option>
+    <option value="Entertainment">Entertainment</option>
+  </select></label>
+    </div></br><br>
+    <div class="spnt">Spent in Money : <input id="sp" type="number" min="0"></div></div></br></br>
+    <div class="btns">
+        <center>
+            <button id="add" onclick="val()"><bold>Add transaction</bold>
+            </button></center>
+    </div>
+    </form></br></br>
+    <div class="de"><center>
+        <button id="add" onclick="del()"><bold>Delete Them</bold></button>
+    </center></div>
+
+    <table id="mytable">
+        <tr><th id="cb" ><input id="mc" type="checkbox" onclick="checkIt()"></th><th id="cb">S.No</th>
+            <th>Category</th>
+            <th>Spent</th>
+        </th></tr>
+    </table>
+<script src="ta.js"></script>
+</body>
+</html>
