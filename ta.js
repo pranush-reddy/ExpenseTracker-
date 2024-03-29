@@ -12,12 +12,13 @@ function val(event) {
         c++;
         node.setAttribute("id",c);
         const chnode0 = document.createElement("td");
-        const chb=document.createElement("input");
-        chb.setAttribute("id",c);
-        chb.setAttribute("class","cb")
-        chb.setAttribute("type","checkbox");
+        const chb = document.createElement("input");
+        chb.setAttribute("id", c);
+        chb.setAttribute("class", "cb");
+        chb.setAttribute("type", "checkbox");
         chnode0.appendChild(chb);
         node.appendChild(chnode0);
+        chb.addEventListener("click", Uncheck);
         const chnode1 = document.createElement("td");
         let l=document.getElementsByTagName("tr").length;
         let len = document.createTextNode(l);
@@ -36,6 +37,7 @@ function val(event) {
         node.appendChild(chnode3);
         document.getElementById("mytable").appendChild(node);
         document.getElementById("res").innerHTML="You've Spent : Rs "+t+" /-";
+        Remve();
     }
 }
 /*function delIt(){
@@ -48,6 +50,22 @@ function val(event) {
     }
 }
 */
+function Uncheck(){
+    var op=document.querySelectorAll('input[type="checkbox"]');
+    for(var y=1;y<op.length;y++){
+        if(op[y].checked==false){
+           let mn= document.getElementById('mc');
+            mn.checked=false;
+            break;
+        }
+    }
+}
+function Remve(){
+    let dv=document.querySelectorAll('input[type="checkbox"]');
+    for(var b=0;b<=dv.length;b++){
+        dv[b].checked=false;
+    }
+}
 function del(){
     t=0;
     let er=document.querySelectorAll('input[type="checkbox"]');
@@ -79,4 +97,8 @@ function checkIt() {
     checkboxes.forEach(function(checkbox) {
         checkbox.checked = mycheckbox.checked;
     });
+    console.log(checkboxes.length);
+    for(var i=1;i<checkboxes.length;i++){
+        
+    }
 }
