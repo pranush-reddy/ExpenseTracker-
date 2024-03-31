@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         *{
             margin: 0px;
@@ -45,6 +46,7 @@
         }
     table{
         width: 70vw;
+        margin-top: 40px;
         margin-left: 150px;
         margin-bottom: 100px;
         border: 2px solid white;
@@ -155,6 +157,24 @@
         left: 650px;
         width: 0px;
     }
+    .bh{
+        width: 400px;
+        height: 45px;
+        font-size:22px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 7px;
+        color: white;
+        background-image:linear-gradient(to bottom right,rgb(167, 39, 167),rgb(96, 14, 96));;
+    }
+
+    div canvas{
+    
+        width: 900px;
+        height: 900px;
+        margin: 80px auto;
+
+    }
     </style>
 </head>
 <body><header><nav>
@@ -183,15 +203,18 @@
     </div>
     </form></br></br>
     <div class="de"><center>
-        <button id="add" onclick="del()"><bold>Delete Them</bold></button>
+        <button id="add" onclick="del()"><bold>Delete Rows</bold></button>
     </center></div>
-
-    <table id="mytable">
-        <tr><th id="cb" ><input id="mc" type="checkbox" onclick="checkIt()"></th><th id="cb">S.No</th>
+    <table id="mytable" onchange="Jet()">
+        <tr><th id="cb" ><input id="mc" class="top" type="checkbox" onclick="checkIt()"></th><th id="cb">S.No</th>
             <th>Category</th>
             <th>Spent</th>
         </th></tr>
     </table>
+<center><buton class="bh" onclick="Show()">Get Stats</buton></center>
+<div id="graph">
+    <canvas id="myChart"></canvas>
+</div>
 <script src="ta.js"></script>
 </body>
 </html>
